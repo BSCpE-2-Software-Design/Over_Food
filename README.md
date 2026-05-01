@@ -2,7 +2,7 @@
 # Chef-Mode-On
 ```mermaid
 sequenceDiagram
-    participant Player
+    Actor Player
     participant Game
     participant Customer
 
