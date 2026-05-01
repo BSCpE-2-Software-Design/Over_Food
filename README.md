@@ -1,5 +1,4 @@
 # Over_Food
-# Chef-Mode-On
 ```mermaid
 sequenceDiagram
     Actor Player
@@ -44,4 +43,102 @@ sequenceDiagram
     Player->>Game: Start Next Level
 
 
+```
+```mermaid
+
+---
+config:
+  layout: elk
+---
+classDiagram
+    class Game {
+        +currentLevel: int
+        +totalPoints: int
+        +startGame()
+        +nextLevel()
+        +restartLevel()
+        +endGame()
+    }
+
+    class Customer {
+        +customerId: int
+        +level: int
+        +orders: Order[]
+        +pickOrder(): Order
+    }
+
+    class Level {
+        +levelNumber: int
+        +orderCount: int
+        +orders: Order[]
+        +isComplete: bool
+    }
+
+    class Order {
+        +orderId: int
+        +foodType: string
+        +steps: Step[]
+        +isCompleted: bool
+    }
+
+    class Step {
+        +stepNumber: int
+        +question: string
+        +choices: Choice[]
+        +correctAnswer: string
+        +isAnswered: bool
+    }
+
+    class Choice {
+        +choiceLabel: string
+        +choiceText: string
+        +isCorrect: bool
+    }
+
+    class Food {
+        +foodName: string
+        +stepCount: int
+        +preparedSteps: Step[]
+    }
+
+    class FriedChicken
+    class Pizza
+    class Fries
+    class Burger
+
+    class GameSession {
+        +sessionId: int
+        +player: Customer
+        +currentOrder: Order
+        +currentStep: Step
+        +points: int
+        +processAnswer(choice: Choice)
+        +deductPoints(amount: 10)
+        +checkFailure() : bool
+        +advanceToNextStep()
+        +returnToStep()
+    }
+
+
+    Game --> Customer: manages
+    Game --> Level: contains
+    Level --> Order: includes
+    Customer --> Order: selects
+    Order --> Step: contains
+    Step --> Choice: has
+    Order --> Food: prepares
+    
+    %% Inheritance
+    Food <|-- FriedChicken
+    Food <|-- Pizza
+    Food <|-- Fries
+    Food <|-- Burger
+    
+    GameSession --> Customer: tracks
+    GameSession --> Order: processes
+    GameSession --> Step: evaluates
+    GameSession --> Choice: receives
+    
+    %% The Triggered Action
+    GameSession ..> Game : [points <= 30] triggers restartLevel()
 ```
