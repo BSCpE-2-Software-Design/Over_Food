@@ -124,6 +124,7 @@ int main() {
     int orderIdCounter = 1;
     int currentLevel = 1;
     bool gameRunning = true;
+    int totalScore = 0;
    
 
     // ===== LEVEL 1 =====
@@ -140,9 +141,11 @@ int main() {
             std::cout << "[SYSTEM]: You ran out of points!\n" << std::endl;
             std::cout << "[SYSTEM]: Thanks for playing Chef Mode On!\n" << std::endl;
             gameRunning = false;
+
         }
-        else {
-            char choice = displayLevelCompleteMenu(1);
+        else{
+        totalScore += session1.getPoints();
+        char choice = displayLevelCompleteMenu(1);
 
             if (choice == '1') {
                 std::cout << "\n[SYSTEM]: Great! Starting Level 2...\n";
@@ -172,6 +175,7 @@ int main() {
             std::cout << "[SYSTEM]: Thanks for playing Chef Mode On!\n" << std::endl;
             gameRunning = false;
         } else {
+            totalScore += session2.getPoints();
             char choice = displayLevelCompleteMenu(2);
             if (choice == '1') {
                 std::cout << "\n[SYSTEM]: Excellent! Starting Level 3...\n" << std::endl;
@@ -188,12 +192,30 @@ int main() {
     // ===== LEVEL 3 =====
     if (gameRunning && currentLevel == 3) {
         Order* level3Order = createLevel3(menu, orderIdCounter);
-        processLevel(level3Order, 3);
+
+        GameSession session3(level3Order);
+
+        displayOrderHierarchy(level3Order);
+
+        std::cout << "[SYSTEM]: Chef, the orders are in! Starting the kitchen...\n" << std::endl;
+
+        session3.processHierarchicalOrder();
+
+        if (session3.checkFailure()) {
+            std::cout << "\nGAME OVER!\n";
+            gameRunning = false;
+        }
+        else {
+            totalScore += session3.getPoints();
+        }
 
         std::cout << "\n========================================" << std::endl;
         std::cout << "    LEVEL 3 COMPLETE - GAME FINISHED!    " << std::endl;
         std::cout << "========================================\n" << std::endl;
+     
+
         std::cout << "[SYSTEM]: Congratulations! You completed all levels!\n" << std::endl;
+        std::cout << "[SYSTEM]: Final Score: " << totalScore << "/300\n" << std::endl;
         std::cout << "[SYSTEM]: Thanks for playing Chef Mode On!\n" << std::endl;
 
         delete level3Order;
