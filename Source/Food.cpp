@@ -19,6 +19,8 @@ void Food::addStep(const std::string& question,
 
     // Convert 0-3 index into A-D
     answers.push_back('A' + correctIndex);
+
+    answersText.push_back(choiceList[correctIndex]);
 }
 
 
