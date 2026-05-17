@@ -29,3 +29,4 @@ Fries::Fries() : Food("Fries") {
     addStep("Step 7",
         { "Heat again", "Season and serve",
           "Wash fries", "Cool plate" }, 1);
+}

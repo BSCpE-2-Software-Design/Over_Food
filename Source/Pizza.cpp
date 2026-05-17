@@ -3,30 +3,30 @@
 Pizza::Pizza() : Food("Pizza") {
 
     addStep("Step 1",
-        { "Prepare dough", "Cool cheese",
-          "Add sauce", "Skip dough" }, 0);
+        { "Prepare dough", "Cut cheese",
+          "Heat tray", "Wash bowl" }, 0);
 
     addStep("Step 2",
-        { "Heat dough", "Let dough rise",
-          "Cut dough", "Freeze dough" }, 1);
+        { "Add sauce", "Let dough rise",
+          "Cool dough", "Wash tray" }, 1);
 
     addStep("Step 3",
-        { "Wash cheese", "Prepare sauce",
-          "Cut dough", "Skip sauce" }, 1);
+        { "Cut toppings", "Prepare sauce",
+          "Heat cheese", "Check dough" }, 1);
 
     addStep("Step 4",
-        { "Heat tray", "Check dough",
-          "Cool plate", "Spread dough" }, 3);
+        { "Heat tray", "Add cheese",
+          "Wash plate", "Spread dough" }, 3);
 
     addStep("Step 5",
-        { "Add cheese", "Remove dough",
-          "Add sauce and toppings", "Cool pizza" }, 2);
+        { "Cool sauce", "Cut dough",
+          "Add sauce and toppings", "Wash tray" }, 2);
 
     addStep("Step 6",
-        { "Cool oven", "Bake pizza",
-          "Cut dough", "Wash tray" }, 1);
+        { "Check pizza", "Bake pizza",
+          "Cool oven", "Dry plate" }, 1);
 
     addStep("Step 7",
         { "Heat slice", "Slice and serve",
-          "Cool pizza", "Bake again" }, 1);
+          "Wash pizza", "Bake again" }, 1);
 }
