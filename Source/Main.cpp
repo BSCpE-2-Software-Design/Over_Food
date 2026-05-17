@@ -124,19 +124,33 @@ int main() {
     int orderIdCounter = 1;
     int currentLevel = 1;
     bool gameRunning = true;
+   
 
     // ===== LEVEL 1 =====
     if (gameRunning) {
         Order* level1Order = createLevel1(menu, orderIdCounter);
-        processLevel(level1Order, 1);
 
-        char choice = displayLevelCompleteMenu(1);
-        if (choice == '1') {
-            std::cout << "\n[SYSTEM]: Great! Starting Level 2...\n" << std::endl;
-            currentLevel = 2;
-        } else {
-            std::cout << "\n[SYSTEM]: Thanks for playing Chef Mode On!\n" << std::endl;
+        GameSession session1(level1Order);
+        session1.processHierarchicalOrder();
+
+        if (session1.checkFailure()) {
+            std::cout << "\n========================================" << std::endl;
+            std::cout << "           GAME OVER!                   " << std::endl;
+            std::cout << "========================================" << std::endl;
+            std::cout << "[SYSTEM]: You ran out of points!\n" << std::endl;
+            std::cout << "[SYSTEM]: Thanks for playing Chef Mode On!\n" << std::endl;
             gameRunning = false;
+        }
+        else {
+            char choice = displayLevelCompleteMenu(1);
+
+            if (choice == '1') {
+                std::cout << "\n[SYSTEM]: Great! Starting Level 2...\n";
+                currentLevel = 2;
+            }
+            else {
+                gameRunning = false;
+            }
         }
 
         delete level1Order;

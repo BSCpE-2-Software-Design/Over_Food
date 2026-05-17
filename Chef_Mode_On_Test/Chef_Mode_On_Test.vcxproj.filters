@@ -18,35 +18,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Chef_Mode_On_Final.cpp">
+    <ClCompile Include="Chef_Mode_On_Test.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\Burger.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\Customer.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\Food.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\FriedChicken.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\Fries.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\GameSession.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\IceCream.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\Order.cpp">
-      <Filter>Source Files\MainSource File</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Chef_Mode_On\Source\Pizza.cpp">
-      <Filter>Source Files\MainSource File</Filter>
     </ClCompile>
     <ClCompile Include="TestCustomer.cpp">
       <Filter>Source Files</Filter>
@@ -62,6 +35,33 @@
     </ClCompile>
     <ClCompile Include="TestFoodItem.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Burger.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Customer.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Food.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\FriedChicken.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Fries.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GameSession.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\IceCream.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Order.cpp">
+      <Filter>Source Files\MainSource File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Pizza.cpp">
+      <Filter>Source Files\MainSource File</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

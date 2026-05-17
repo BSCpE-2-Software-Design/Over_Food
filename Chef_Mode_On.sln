@@ -5,7 +5,7 @@ VisualStudioVersion = 18.2.11415.280
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chef_Mode_On", "Chef_Mode_On.vcxproj", "{9841E80B-DDF9-425A-87F7-5EB0A4A8FDE9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chef_Mode_On_Test", "..\Chef_Mode_On_Final\Chef_Mode_On_Final.vcxproj", "{6714EE56-2358-48ED-AF8B-8D69495603E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chef_Mode_On_Test", "Chef_Mode_On_Test\Chef_Mode_On_Test.vcxproj", "{6714EE56-2358-48ED-AF8B-8D69495603E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
