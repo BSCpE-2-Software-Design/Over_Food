@@ -141,6 +141,7 @@
     <ClCompile Include="..\Source\IceCream.cpp" />
     <ClCompile Include="..\Source\Order.cpp" />
     <ClCompile Include="..\Source\Pizza.cpp" />
+    <ClCompile Include="..\TestSystempoints.cpp" />
     <ClCompile Include="Chef_Mode_On_Test.cpp" />
     <ClCompile Include="TestFoodItem.cpp" />
     <ClCompile Include="TestCustomer.cpp" />

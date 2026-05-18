@@ -63,5 +63,8 @@
     <ClCompile Include="..\Source\Pizza.cpp">
       <Filter>Source Files\MainSource File</Filter>
     </ClCompile>
+    <ClCompile Include="..\TestSystempoints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
