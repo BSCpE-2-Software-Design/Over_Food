@@ -11,7 +11,7 @@ sequenceDiagram
     loop For Each Order in Level
         Game->>Player: 100 Points
         Customer->>Game: Pick Random Order
-        Game->>Player: Display Order (Fried Chicken/Pizza/Fries/Burger)
+        Game->>Player: Display Order (Fried Chicken/Pizza/Fries/Burger/IceCream)
         Player->>Game: Accept Order
 
         loop For Each Step (1-7)
@@ -22,17 +22,8 @@ sequenceDiagram
                 Game->>Player: Next level
             else Wrong Answer
                 Game->>Player: Deduct 10 Points
-                
-                alt Score < 30
-                    Game->>Player: Show "Level Failed"
-                    Game->>Game: Reset Level Variables
-                    Game->>Player: Restart Game Level (1)
-                else Score >= 30
-                    Game->>Player: Reload Step with Random Choices
-                    Player->>Game: Resubmit Answer
-                end
-            end
         end
+end
         
         Game->>Player: Order Complete 
         Player->>Customer: Serve Food
@@ -133,12 +124,11 @@ classDiagram
     Food <|-- Pizza
     Food <|-- Fries
     Food <|-- Burger
+    Food <|-- IceCream
     
     GameSession --> Customer: tracks
     GameSession --> Order: processes
     GameSession --> Step: evaluates
     GameSession --> Choice: receives
-    
-    %% The Triggered Action
-    GameSession ..> Game : [points <= 30] triggers restartLevel()
+
 ```
